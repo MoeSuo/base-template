@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/favicon-light.png",
-        href: "/favicon-light.png"
+        url: "/github-mark.png",
+        href: "/github-mark.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/favicon-dark.png",
-        href: "/favicon-dark.png"
+        url: "/github-mark-white.png",
+        href: "/github-mark-white.png",
       }
     ]
   }
