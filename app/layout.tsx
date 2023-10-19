@@ -1,36 +1,57 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Note App',
-  description: 'Create a modern Notes',
+  title: "Note App",
+  description: "Create a modern Notes",
   icons: {
     icon: [
+      // {
+      //   media: "(prefers-color-scheme: light)",
+      //   url: "/light.svg",
+      //   href: "/light.svg",
+      // },
+      // {
+      //   media: "(prefers-color-scheme: dark)",
+      //   url: "/dark_icon.svg",
+      //   href: "/dark_icon.svg",
+      // },
       {
         media: "(prefers-color-scheme: light)",
-        url: "/github-mark.png",
-        href: "/github-mark.png",
+        url: "/light.svg",
+        href: "/light.svg",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/github-mark-white.png",
-        href: "/github-mark-white.png",
+        url: "/dark_icon.svg",
+        href: "/dark_icon.svg",
       }
-    ]
-  }
-}
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          // disableTransitionOnChange
+          storageKey="notely-theme"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  )
+  );
 }
