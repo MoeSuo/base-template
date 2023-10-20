@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
 import { cn } from "@/lib/utils";
 
-import Logo from "./logo";
+import { Logo } from "./logo";
 
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -35,7 +35,7 @@ export const Navbar = () => {
             </SignInButton>
             <SignInButton mode="modal">
               <Button size="sm">
-                Get Jotion free
+                Create New Note
               </Button>
             </SignInButton>
           </>
