@@ -5,29 +5,32 @@ import { cn } from "@/lib/utils";
 
 const font = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600"]
+  weight: ["400", "600"],
 });
-
-export const Logo = () => {
+const Logo = () => {
   return (
-    <div className="hidden md:flex items-center gap-x-2">
+    <>
+      {" "}
+      <div className="hidden md:flex items-center gap-x-2">
+
       <Image
-        src="/logo.svg"
-        height="40"
-        width="40"
-        alt="Logo"
+        width={20}
+        height={20}
         className="dark:hidden"
-      />
+        src={"/light_icon.svg"}
+        alt="logo"
+        />
       <Image
-        src="/logo-dark.svg"
-        height="40"
-        width="40"
-        alt="Logo"
+        width={20}
+        height={20}
         className="hidden dark:block"
-      />
-      <p className={cn("font-semibold", font.className)}>
-        Jotion
-      </p>
-    </div>
-  )
-}
+        src={"/dark_icon.svg"}
+        alt="logo"
+        />
+      <p className={cn("font-semibold", font.className)}>Notely</p>
+        </div>
+    </>
+  );
+};
+
+export default Logo;
