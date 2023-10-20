@@ -35,7 +35,7 @@ export const Navbar = () => {
             </SignInButton>
             <SignInButton mode="modal">
               <Button size="sm">
-                Get Jotion free
+                Join Notely Free
               </Button>
             </SignInButton>
           </>
@@ -44,7 +44,7 @@ export const Navbar = () => {
           <>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/documents">
-                Enter Jotion
+                Create New Note
               </Link>
             </Button>
             <UserButton
